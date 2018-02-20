@@ -8,7 +8,7 @@ K=(5)
 MAXDIM=(3)
 runs=30
 MODE=(0 1)
-repets=1
+repets=100
 i=0
 name="mode"
 

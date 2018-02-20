@@ -35,8 +35,8 @@ for(i in 1:repets){
 print(score/repets)
 print(conc/repets)
 
-minimum <- min(ARI, INT, ACONT)
-maximum <- max(ARI, INT, ACONT)
+minimum <- 0.0
+maximum <- 1.0
 
 if(mode == 0){
 	smode <- "shared"
@@ -47,7 +47,7 @@ if(mode == 0){
 jpeg(filename=paste0("ARI_dim", max.dim, "_K", K, "_SNR", SNR, "_p", p, "_n", n, "_rep", repets, "_mode_", smode, ".jpg"))
 main.info = paste0("Values of ARI, Integration and Acontamination \n # repetitions=", repets, ", # clusters=", K, ", # observations=",n,
                    ",\n # variables=", p, ", dimension=", max.dim,  ", SNR=", SNR, ", mode:", smode) 
-boxplot(ARI, ylab = "", xaxt = "n", boxwex = 0.1, ylim = c(minimum,maximum+0.1), col = "red")
+boxplot(ARI, ylab = "", xaxt = "n", boxwex = 0.1, ylim = c(minimum,maximum), col = "red")
 boxplot(INT, ylab = "", xaxt = "n", boxwex = 0.1, at = -0.2+1:howmany_methods, add = TRUE, col = "blue")
 boxplot(ACONT, ylab = "", xaxt = "n", boxwex = 0.1, at = 0.2+1:howmany_methods, add = TRUE, col = "green")
 axis(1, at=1:howmany_methods,labels=rownames(results), col.axis="red", las=2)

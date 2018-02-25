@@ -5,10 +5,7 @@ my_install <- function(package_name="", repo="https://cran.rstudio.com"){
 }
 
 my_install("devtools")
-if(!require("viridis")){
-	devtools::install_github("sjmgarnier/viridis")
-}
-my_install("Hmisc")
+my_install("Hmisc") #problems with viridis package - copied from my computer
 my_install("knitr")
 my_install("rmarkdown")
 my_install("mclust")

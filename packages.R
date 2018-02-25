@@ -4,13 +4,16 @@ my_install <- function(package_name="", repo="https://cran.rstudio.com"){
   }
 }
 
+my_install("devtools")
+if(!require("viridis")){
+	devtools::install_github("sjmgarnier/viridis")
+}
 my_install("Hmisc")
 my_install("knitr")
 my_install("rmarkdown")
 my_install("mclust")
 my_install("testthat")
 my_install("ClustOfVar")
-my_install("devtools")
 my_install("RcppEigen")
 my_install("doMC")
 my_install("iterators")

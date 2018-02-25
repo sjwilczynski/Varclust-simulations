@@ -1,5 +1,5 @@
-my_install <- function(package_name, repo="https://cran.rstudio.com"){
-  if(!require(package_name)){
+my_install <- function(package_name="", repo="https://cran.rstudio.com"){
+  if(!require(package_name, character.only=TRUE)){
     install.packages(package_name, repos = repo)
   }
 }
@@ -18,8 +18,10 @@ my_install("parallel")
 my_install("doParallel")
 my_install("foreach")
 my_install("xtable")
-source("https://bioconductor.org/biocLite.R")
-biocLite("impute")
+if(!require("impute")){
+	source("https://bioconductor.org/biocLite.R")
+	biocLite("impute")
+}
 my_install("PMA")
 if(!require("pesel")){
   devtools::install_github("psobczyk/pesel")

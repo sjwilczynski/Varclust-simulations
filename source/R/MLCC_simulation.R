@@ -30,7 +30,14 @@ MLCC3.result <- mlcc.reps(X=X, numb.clusters=K, max.dim=max.dim, max.iter = 50,
                          initial.segmentations = list(segmentationSSC))
 MLCC4.result <- mlcc.reps(X=X, numb.clusters=K, numb.runs=runs, max.dim=max.dim, max.iter = 50,
                          numb.cores = 6, estimate.dimensions = TRUE, mode = "sPCA")
-COV.result <- kmeansvar(X.quanti=scale(X),init=K, nstart = 30, iter.max = 50)
+tryCatch({
+    COV.segmentation <- kmeansvar(X.quanti=scale(X),init=K, nstart = 30, iter.max = 50)$cluster
+}, error = function(err) {
+    # Błąd w poleceniu 'svd(Ztilde)': a dimension is zero
+    # Wywołania kmeansvar -> do_one _> clusterscore -> svd
+    # Put here something dummy
+    COV.segmentation <- rep(1,p)
+})
 
 if(name == "2maxdim"){
 	max.dim = max.dim/2
@@ -44,6 +51,6 @@ write.table(x=matrix(MLCC3.result$segmentation, nrow=1), file=filename,
             sep="," , append=T, col.names=F, row.names=F)
 write.table(x=matrix(MLCC4.result$segmentation, nrow=1), file=filename,
             sep="," , append=T, col.names=F, row.names=F)
-write.table(x=matrix(COV.result$cluster, nrow=1),file=filename, sep="," ,
+write.table(x=matrix(COV.segmentation, nrow=1),file=filename, sep="," ,
             append=T, col.names=F, row.names=F)
 

@@ -33,15 +33,14 @@ dane <- matrix(nrow=howManyMatlab+howManyR, ncol=4)
 
 for (i in 1:howManyMatlab){
   tryCatch({
-      dane[i,1] <- adjustedRandIndex(as.matrix(segmentationMATLAB[i,1:p]),
-                                     true_segmentation)
+      dane[i,1] <- adjustedRandIndex(as.matrix(segmentationMATLAB[i,1:p]), true_segmentation)
+      # Here we're supposed to calculate the BIC for the cluster but don't have dimensionalities here                                
       #dane[i,2] <- varclust:::cluster.pca.BIC(X, as.matrix(segmentationMATLAB[i,1:p]), max.dim, K)
       res <- varclust:::integration(segmentationMATLAB[i,1:p], true_segmentation)
       dane[i,3] <- res[1]
       dane[i,4] <- res[2]
     
   }, error = function(err) {
-    print(err)
     dane[i,1] <- 0
     dane[i,2] <- 0
     dane[i,3] <- 0
@@ -53,8 +52,8 @@ for (i in 1:howManyMatlab){
 for (i in 1:howManyR){
   j <- howManyMatlab + i
   tryCatch({
-      dane[j,1] <- adjustedRandIndex(as.matrix(segmentationR[i,1:p]),
-                                     true_segmentation)
+      dane[j,1] <- adjustedRandIndex(as.matrix(segmentationR[i,1:p]), true_segmentation)
+      # Here we're supposed to calculate the BIC for the cluster but don't have dimensionalities here                                
       #dane[j,2] <- varclust:::cluster.pca.BIC(X, as.matrix(segmentationR[i,1:p]), max.dim, K)
       res <- varclust:::integration(segmentationR[i,1:p], true_segmentation)
       dane[j,3] <- res[1]
@@ -65,7 +64,6 @@ for (i in 1:howManyR){
       dane[j,3] <- 0
       dane[j,4] <- 0
   })
-
 }
 
 
@@ -74,8 +72,6 @@ colnames(dane)= c("ARI", "BIC", "Integration", "Acontamination")
 rownames(dane) <- c("SSC", "LRSC", "MLCC","aSSC","sPCA","COV")
 tableCaption <- paste("Simulated \\newline
           D=", p, "; n=", n, "; SNR=", SNR, "; K=", K, "; max.dim=", max.dim, ";")
-#print(xtable(dane, align="|c|ccc|",caption=tableCaption, label="methods_comparison"),sanitize.text.function=function(x){x})
-
 filename <- paste('output', name, n, p, SNR, K, max.dim, mode, rep, sep='_')
 filename <- paste(filename, '.csv', sep='')
 write.table(format(x=dane,digits=3), file=filename)

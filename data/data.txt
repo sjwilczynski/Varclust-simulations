@@ -1,0 +1,2 @@
+Dummy file so that the folder is always present in the repository. 
+Otherwise scripts can't generate data.

@@ -2,3 +2,4 @@
 2. Generowanie z brakujących danych na podstawie sąsiednich obserwacji
 3. Przemyślenie wartości parametrów startowych
 4. Check na długość initial.segmentations (bo mateusz zle uzywal tej funkcji i działała)
+5. Jak się generuje pusty klaster, to może być -inf BIC - to głupie, powinien być jakiś warning

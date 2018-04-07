@@ -5,7 +5,6 @@ my_install <- function(package_name="", repo="https://cran.rstudio.com"){
 }
 
 my_install("devtools")
-my_install("Hmisc") #problems with viridis package - copied from my computer
 my_install("knitr")
 my_install("rmarkdown")
 my_install("mclust")
@@ -29,4 +28,3 @@ if(!require("pesel")){
 if(!require("varclust")){
   devtools::install_github("psobczyk/varclust")
 }
-

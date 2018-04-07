@@ -1,5 +1,3 @@
-require(Hmisc, quietly = TRUE)
-
 args   <- commandArgs(trailingOnly = TRUE)                                                                                                                                                                                                                        
 n      <- as.numeric(args[1])
 p      <- as.numeric(args[2])
@@ -30,7 +28,6 @@ for(i in 1:repets){
   ARI <- rbind(ARI, results$ARI)
   INT <- rbind(INT, results$Integration)
   ACONT <- rbind(ACONT, results$Acontamination)
-  #print(results$ARI)
 }
 print(score/repets)
 print(conc/repets)

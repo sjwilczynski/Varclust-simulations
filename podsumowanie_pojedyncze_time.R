@@ -1,5 +1,3 @@
-require(Hmisc, quietly = TRUE)
-
 args   <- commandArgs(trailingOnly = TRUE)                                                                                                                                                                                                                        
 n      <- as.numeric(args[1])
 p      <- as.numeric(args[2])
@@ -24,7 +22,7 @@ dataR <- read.table(filenameR, header=F, sep=',')
 dataMatlab <- read.table(filenameMatlab, header=F, sep=',')
 
 
-data <- cbind( dataMatlab, dataR ) #print(results$ARI)
+data <- cbind( dataMatlab, dataR )
 colnames(data) <- c("SSC","LRSC","COV","sPCAtot","sPCAinit","sPCAt_iter","sPCAn_iter",
 	"KM++tot","KM++init","KM++t_iter","KM++n_iter","KMtot","KMinit","KMt_iter","KMn_iter")
 

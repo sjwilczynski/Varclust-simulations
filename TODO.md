@@ -11,3 +11,8 @@
 
 1. Wstęp - porządny z analizą related work, przykład Mateusza po symulacjach, opisanie modelu matematycznego do przerobienia
 2. Format JSS: [przykład - ClustOfVar](https://arxiv.org/pdf/1112.0295.pdf), [instrukcje ogólne](https://www.jstatsoft.org/pages/view/authors), [styl praca - szczegóły](https://www.jstatsoft.org/pages/view/style)
+
+* Symulacje i przykład:
+
+1. Też powinny spełniać wymagania CRANowe
+2. Symulacje - uporządkować funkcje, angielskie nazwy, wyrzucić niepotrzebny kod, skrypt odpalający wszystko

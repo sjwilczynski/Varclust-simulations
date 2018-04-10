@@ -5,8 +5,7 @@
 1. Update dokumentacji: integracja(wzory), przykłady już chyba wszędzie, opisy to raczej czekamy na pracę
 2. Generowanie z brakujących danych na podstawie sąsiednich obserwacji
 3. Sprawdzić CRANowe wymagania, dowiedzieć się od Piotrka jaka jest procedura, itp. ([procedura](http://r-pkgs.had.co.nz/release.html), [polityki](https://cran.r-project.org/web/packages/policies.html))
-4. Skoro impute nie jest na CRANie a docelowo byśmy na CRANie chcieli, możeby wyrzucić to sPCA. Inna opcja - jakieś sPCA jest w pakiecie elasticnet.
-5. Opinia Julie Josse
+4. Opinia Julie Josse
 
 * Praca
 
@@ -16,4 +15,5 @@
 * Symulacje i przykład:
 
 1. Też powinny spełniać wymagania CRANowe
-2. Symulacje - uporządkować funkcje, angielskie nazwy, wyrzucić niepotrzebny kod, skrypt odpalający wszystko
+2. Wyrzucić mode'a i różne inicjalizacje
+3. Symulacje - uporządkować funkcje, angielskie nazwy, wyrzucić niepotrzebny kod, skrypt odpalający wszystko

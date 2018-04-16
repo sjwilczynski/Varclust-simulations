@@ -2,6 +2,6 @@
 
 for i in {1..10}
 do
-    cp -r symulacje/   symulacje$i/
+    cp -r simulations/   simulations$i/
 done
 

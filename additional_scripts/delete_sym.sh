@@ -2,6 +2,6 @@
 
 for i in {1..10}
 do
-    rm -r symulacje$i/
+    rm -r simulations$i/
 done
 

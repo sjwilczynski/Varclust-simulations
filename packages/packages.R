@@ -17,11 +17,6 @@ my_install("parallel")
 my_install("doParallel")
 my_install("foreach")
 my_install("xtable")
-if(!require("impute")){
-	source("https://bioconductor.org/biocLite.R")
-	biocLite("impute")
-}
-my_install("PMA")
 if(!require("pesel")){
   devtools::install_github("psobczyk/pesel")
 }

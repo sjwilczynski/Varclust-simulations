@@ -10,10 +10,7 @@ name   <- args[8]
 
 prev=""
 
-howmany_methods = 6
-if(name == "KvsKpp" || name == "KvssPCA"){
-  howmany_methods = 2
-}
+howmany_methods = 5
 score <- rep(0,howmany_methods)
 conc = 0
 ARI <- NULL

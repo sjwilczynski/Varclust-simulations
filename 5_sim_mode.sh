@@ -12,8 +12,6 @@ repets=100
 i=0
 name="mode"
 
-echo "Start script mode"
-
 for n in ${N[*]}
 do
 	for p in ${P[*]}
@@ -29,7 +27,7 @@ do
 						((i++))
 						echo "Run $i start. Parameters: n=$n, p=$p, snr=$snr, k=$k, maxdim=$maxdim, mode=$mode"
 						nohup ./sim_reps.sh $n $p $snr $k $maxdim $runs $repets $mode $name
-						echo "Run $i done. Parameters: n=$n, p=$p, snr=$snr, k=$k, maxdim=$maxdim, mode=$mode"
+						echo "Run $i done." 
 					done
 				done
 			done

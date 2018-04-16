@@ -10,9 +10,7 @@ runs=30
 MODE=(0)
 repets=3
 i=0
-name="testtime"
-
-echo "Start script mode"
+name="test_time"
 
 for n in ${N[*]}
 do
@@ -29,7 +27,7 @@ do
 						((i++))
 						echo "Run $i start. Parameters: n=$n, p=$p, snr=$snr, k=$k, maxdim=$maxdim, mode=$mode"
 						nohup ./sim_time.sh $n $p $snr $k $maxdim $runs $repets $mode $name
-						echo "Run $i done. Parameters: n=$n, p=$p, snr=$snr, k=$k, maxdim=$maxdim, mode=$mode"
+						echo "Run $i done"
 					done
 				done
 			done

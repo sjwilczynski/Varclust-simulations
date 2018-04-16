@@ -10,8 +10,7 @@ runs=30
 MODE=(0)
 repets=100
 i=0
-name="#VarsModeS"
-echo "Start script liczba zmiennych"
+name="#Vars"
 
 for n in ${N[*]}
 do
@@ -28,7 +27,7 @@ do
 						((i++))
 						echo "Run $i start. Parameters: n=$n, p=$p, snr=$snr, k=$k, maxdim=$maxdim, mode=$mode"
 						nohup ./sim_reps.sh $n $p $snr $k $maxdim $runs $repets $mode $name
-						echo "Run $i done. Parameters: n=$n, p=$p, snr=$snr, k=$k, maxdim=$maxdim, mode=$mode"
+						echo "Run $i done."
 					done
 				done
 			done

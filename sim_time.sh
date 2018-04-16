@@ -20,7 +20,7 @@ then
 else
 rm -f timeR* timeM*
 #echo "Generating dataset"
-Rscript source/R/sim_data.R $n $p $SNR $K $dim $mode
+Rscript source/R/sim_data.R $n $p $SNR $K $dim $mode $i
 #echo "dataset simulated"
 for i in $(seq 1 $repets)
 do

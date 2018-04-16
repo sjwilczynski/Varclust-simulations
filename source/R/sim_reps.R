@@ -12,6 +12,9 @@ file.name <- paste('data/X_', max.dim, '_', SNR, '.csv', sep='')
 N         <- p/K
 name      <- args[7]
 
+#setting seed
+set.seed(n+K)
+
 X <- read.table(file.name, header=F, sep=',')
 X <- as.matrix(X)
 filename <- paste('segmentationMATLAB', max.dim, '.csv', sep='')
@@ -23,9 +26,9 @@ if(name == "2maxdim"){
 }
 
 
-MLCC2.result <- mlcc.reps(X=X, numb.clusters=K, numb.runs=runs, max.dim=max.dim, max.iter = 50,
+MLCC1.result <- mlcc.reps(X=X, numb.clusters=K, numb.runs=runs, max.dim=max.dim, max.iter = 50,
                          numb.cores = 6, estimate.dimensions = TRUE)
-MLCC3.result <- mlcc.reps(X=X, numb.clusters=K, max.dim=max.dim, max.iter = 50,
+MLCC2.result <- mlcc.reps(X=X, numb.clusters=K, max.dim=max.dim, max.iter = 50,
                          numb.cores = 6, estimate.dimensions = TRUE, 
                          initial.segmentations = list(segmentationSSC))
 tryCatch({
@@ -43,10 +46,9 @@ if(name == "2maxdim"){
 
 
 filename <- paste('segmentationR', max.dim, '.csv', sep='')
-write.table(x=matrix(MLCC2.result$segmentation, nrow=1), file=filename,
+write.table(x=matrix(MLCC1.result$segmentation, nrow=1), file=filename,
             sep="," , append=T, col.names=F, row.names=F)
-write.table(x=matrix(MLCC3.result$segmentation, nrow=1), file=filename,
+write.table(x=matrix(MLCC2.result$segmentation, nrow=1), file=filename,
             sep="," , append=T, col.names=F, row.names=F)
 write.table(x=matrix(COV.segmentation, nrow=1),file=filename, sep="," ,
             append=T, col.names=F, row.names=F)
-

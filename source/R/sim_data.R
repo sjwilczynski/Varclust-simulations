@@ -7,6 +7,10 @@ SNR     <- as.numeric(args[3]) #Signal to Noise ratio
 K       <- as.numeric(args[4]) #number of subspaces
 max.dim <- as.numeric(args[5]) #maximal subspace dimension
 mode    <- as.numeric(args[6]) #shared/ not shared facors
+i       <- as.numeric(args[7]) #iteration identifier
+
+#setting seed
+set.seed(i)
 
 if(mode == 0){
 	sim.data <- data.simulation.factors(n = n, SNR = SNR, K = K, numb.vars = p/K,

@@ -14,5 +14,4 @@
 
 * Symulacje i przykład:
 
-1. Też powinny spełniać wymagania CRANowe
-2. Skrypt odpalający wszystko
+1. Też powinny spełniać wymagania CRANowe - np. dodać licencję.

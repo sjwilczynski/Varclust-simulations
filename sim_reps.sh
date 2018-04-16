@@ -24,7 +24,7 @@ do
     rm -f segmentation*
     echo "Rep $i"
     #echo "Generating dataset"
-    Rscript source/R/sim_data.R $n $p $SNR $K $dim $mode
+    Rscript source/R/sim_data.R $n $p $SNR $K $dim $mode $i
     #echo $dim
 
     #echo "dataset simulated"

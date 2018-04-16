@@ -16,6 +16,8 @@ reps      <- as.numeric(args[7])
 mode      <- as.numeric(args[8])
 name      <- args[9]
 
+#setting seed
+set.seed(n+K)
 
 sd = min(20, round(K/2))
 min = K - sd

@@ -18,7 +18,7 @@ then
     echo "K does not divide p. ERROR"
 else
     #echo "Choosing number of cluster"
-    Rscript source/R/wybor_liczby_klastrow_BIC.R $n $p $SNR $K $dim $runs $repets $mode $name
+    Rscript source/R/sim_mbic.R $n $p $SNR $K $dim $runs $repets $mode $name
 #echo "Summary"
-Rscript podsumowanie_pojedyncze_bic.R $n $p $SNR $K $dim $repets $mode $name
+Rscript summary_bic.R $n $p $SNR $K $dim $repets $mode $name
 fi

@@ -10,7 +10,7 @@ runs=30
 MODE=(0)
 repets=3
 i=0
-name="testtime"
+name="test"
 
 echo "Start script mode"
 
@@ -28,7 +28,7 @@ do
 					do
 						((i++))
 						echo "Run $i start. Parameters: n=$n, p=$p, snr=$snr, k=$k, maxdim=$maxdim, mode=$mode"
-						nohup ./symulacje_czas_wejscie.sh $n $p $snr $k $maxdim $runs $repets $mode $name
+						nohup ./sim_reps.sh $n $p $snr $k $maxdim $runs $repets $mode $name
 						echo "Run $i done. Parameters: n=$n, p=$p, snr=$snr, k=$k, maxdim=$maxdim, mode=$mode"
 					done
 				done

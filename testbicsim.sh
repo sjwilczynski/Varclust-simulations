@@ -1,5 +1,5 @@
 #!/bin/bash
-#mode
+# klastry 
 
 N=(10)
 P=(50)
@@ -7,12 +7,12 @@ SNR=(1)
 K=(5)
 MAXDIM=(3)
 runs=30
-MODE=(0)
+MODE=(1)
 repets=3
 i=0
-name="test"
+name="testbic"
 
-echo "Start script mode"
+echo "Start script klastry"
 
 for n in ${N[*]}
 do
@@ -28,7 +28,7 @@ do
 					do
 						((i++))
 						echo "Run $i start. Parameters: n=$n, p=$p, snr=$snr, k=$k, maxdim=$maxdim, mode=$mode"
-						nohup ./symulacje_wejscie.sh $n $p $snr $k $maxdim $runs $repets $mode $name
+						nohup ./sim_mbic.sh $n $p $snr $k $maxdim $runs $repets $mode $name
 						echo "Run $i done. Parameters: n=$n, p=$p, snr=$snr, k=$k, maxdim=$maxdim, mode=$mode"
 					done
 				done

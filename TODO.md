@@ -15,5 +15,4 @@
 * Symulacje i przykład:
 
 1. Też powinny spełniać wymagania CRANowe
-2. Wyrzucić mode'a i różne inicjalizacje
-3. Symulacje - uporządkować funkcje, angielskie nazwy, wyrzucić niepotrzebny kod, skrypt odpalający wszystko
+2. Skrypt odpalający wszystko

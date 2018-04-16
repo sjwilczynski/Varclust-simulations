@@ -28,9 +28,9 @@ do
     #echo "SSC and LRSC"
     if [ "$nazwa" == "stachu" ]
     then
-    /usr/local/MATLAB/R2016a/bin/matlab -nosplash -nodisplay -nojvm -r "cd('source/matlab'), moje_symulacje_czas($n, $dim, $SNR, $K, $p),quit()" > tmpM
+    /usr/local/MATLAB/R2016a/bin/matlab -nosplash -nodisplay -nojvm -r "cd('source/matlab'), simulations_time($n, $dim, $SNR, $K, $p),quit()" > tmpM
     else
-    matlab -nosplash -nodisplay -nojvm -r "cd('source/matlab'), moje_symulacje_czas($n, $dim, $SNR, $K, $p),quit()" > tmpM
+    matlab -nosplash -nodisplay -nojvm -r "cd('source/matlab'), simulations_time($n, $dim, $SNR, $K, $p),quit()" > tmpM
     fi
     #echo "MLCC and ClustOfVar"
     Rscript source/R/sim_reps_czas.R $n $p $SNR $K $dim $i  

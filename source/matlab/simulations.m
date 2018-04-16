@@ -1,6 +1,6 @@
 % Piotr Sobczyk
 
-function mis = moje_symulacje(n, dim, sigma, K, p)
+function mis = simulations(n, dim, sigma, K, p)
 filename = ['../../data/X_'  num2str(dim) '_'  num2str(sigma) '.csv'];
 X = csvread(filename);
 %normalizing X

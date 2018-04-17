@@ -25,7 +25,7 @@ if(name == "2maxdim"){
 	max.dim = 2*max.dim
 }
 
-
+#changing numb.cores to 1 is still not enough for reproducibility
 MLCC1.result <- mlcc.reps(X=X, numb.clusters=K, numb.runs=runs, max.dim=max.dim, max.iter = 50,
                          numb.cores = 6, estimate.dimensions = TRUE)
 MLCC2.result <- mlcc.reps(X=X, numb.clusters=K, max.dim=max.dim, max.iter = 50,

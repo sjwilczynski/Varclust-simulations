@@ -1,13 +1,12 @@
 args   <- commandArgs(trailingOnly = TRUE)                                                                                                                                                                                                                        
 n      <- as.numeric(args[1])
-p      <- as.numeric(args[2])
+p      <- eval(parse(text=args[2]))
 SNR    <- as.numeric(args[3])
-K      <- as.numeric(args[4])
-max.dim    <- as.numeric(args[5])
+K      <- eval(parse(text=args[4]))
+max.dim<- as.numeric(args[5])
 repets <- as.numeric(args[6])
 mode   <- as.numeric(args[7])
 name   <- args[8]
-
 prev=""
 
 if(mode == 0){
@@ -23,14 +22,22 @@ dataMatlab <- read.table(filenameMatlab, header=F, sep=',')
 
 
 data <- cbind( dataMatlab, dataR )
-colnames(data) <- c("SSC","LRSC","COV","sPCAtot","sPCAinit","sPCAt_iter","sPCAn_iter",
-	"KM++tot","KM++init","KM++t_iter","KM++n_iter","KMtot","KMinit","KMt_iter","KMn_iter")
+colnames(data) <- c("SSC","LRSC","COV","MLCC")
 
-means <- apply(data, 2, mean)
-sds <- apply(data, 2, sd )
-data <- rbind(sds, data)
-data <- rbind(means, data)
-
-filename <- paste('Time',name, n, p, SNR, K, max.dim, smode, sep='_')
+filename <- paste('output',name, n, paste(p, collapse="_"), SNR, paste(K, collapse="_"), max.dim, smode, sep='_')
 filename <- paste(filename, '.csv', sep='')
 write.csv(format(x=data,digits=6), file=filename)
+
+
+if(length(p) > 1){
+	xs <- p
+} else {
+	xs <- K
+}
+jpeg(filename=paste0("Time_dim", max.dim, "_K", paste(K, collapse="_"), "_SNR", SNR, "_p", paste(p, collapse="_"), "_n", n, "_rep", repets, "_mode_", smode, ".jpg"))
+main.info = paste0("Execution time for ", name) 
+cols <- c("#FF4136", "#0074D9", "#2ECC40", "#B10DC9")
+matplot(xs, data, type="b", xlab=name, ylab="execution time (seconds)", col = cols, pch=19, lty = "solid")
+legend("topleft", legend=colnames(data), col=cols, pch=19)
+title(main.info)
+dev.off()

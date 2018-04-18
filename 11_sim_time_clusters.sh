@@ -2,15 +2,15 @@
 #time
 
 N=(100)
-P=(300 600 900 3000)
+P=(600)
 SNR=(1)
-K=(5 10)
+K=(5 10 15 20)
 MAXDIM=(3)
 runs=1
 MODE=(0)
-repets=100
+repets=1
 i=0
-name="time"
+name="number_of_clusters"
 
 for n in ${N[*]}
 do
@@ -34,5 +34,6 @@ do
 		done
 	done
 done
+Rscript summary_time.R $N "c(600)" $SNR "c(5, 10, 15, 20)" $MAXDIM $repets $MODE $name
 ./clean_folder.sh $name
 echo "DONE"

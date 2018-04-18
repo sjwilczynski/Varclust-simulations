@@ -40,14 +40,18 @@ case $to_run in
         nohup ./9_sim_snr_mode_shared.sh | tee nohup.out 
         ;;
     "10" )
-        echo "execution time"
-        #nohup ./10_sim_time.sh | tee nohup.out 
+        echo "execution time with repsect to the number of variables"
+        nohup ./10_sim_time_variables.sh | tee nohup.out 
+        ;;
+    "11" )
+        echo "execution time with repsect to the number of clusters"
+        nohup ./10_sim_time_clusters.sh | tee nohup.out 
         ;;
     "test" )
         echo "test simulations"
         nohup ./testbicsim.sh | tee nohup.out
         nohup ./testsim.sh | tee nohup.out
-        #nohup ./testtimesim.sh | tee nohup.out 
+        nohup ./testtimesim.sh | tee nohup.out 
         ;;
     "all" )
         echo "Run all simulations"
@@ -60,6 +64,7 @@ case $to_run in
         nohup ./7_sim_number_of_vars.sh | tee nohup.out 
         nohup ./8_sim_snr_mode_not_shared.sh | tee nohup.out 
         nohup ./9_sim_snr_mode_shared.sh | tee nohup.out 
-        #nohup ./10_sim_time.sh | tee nohup.out 
+        nohup ./10_sim_time_variables.sh | tee nohup.out 
+        nohup ./11_sim_time_clusters.sh | tee nohup.out 
         ;;
 esac

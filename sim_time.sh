@@ -18,23 +18,12 @@ if [ $y != $p ]
 then
     echo "K does not divide p. ERROR"
 else
-rm -f timeR* timeM*
-#echo "Generating dataset"
-Rscript source/R/sim_data.R $n $p $SNR $K $dim $mode $i
-#echo "dataset simulated"
-for i in $(seq 1 $repets)
-do
-    echo "Rep $i"
-    #echo "SSC and LRSC"
-    if [ "$nazwa" == "stachu" ]
-    then
-    /usr/local/MATLAB/R2016a/bin/matlab -nosplash -nodisplay -nojvm -r "cd('source/matlab'), simulations_time($n, $dim, $SNR, $K, $p),quit()" > tmpM
-    else
-    matlab -nosplash -nodisplay -nojvm -r "cd('source/matlab'), simulations_time($n, $dim, $SNR, $K, $p),quit()" > tmpM
-    fi
-    #echo "MLCC and ClustOfVar"
-    Rscript source/R/sim_reps_czas.R $n $p $SNR $K $dim $i  
-done
-#echo "Summary"
-Rscript summary_time.R $n $p $SNR $K $dim $repets $mode $name
+Rscript source/R/sim_data.R $n $p $SNR $K $dim $mode $K
+if [ "$nazwa" == "stachu" ]
+then
+/usr/local/MATLAB/R2016a/bin/matlab -nosplash -nodisplay -nojvm -r "cd('source/matlab'), simulations_time($n, $dim, $SNR, $K, $p, $repets),quit()" > tmpM
+else
+matlab -nosplash -nodisplay -nojvm -r "cd('source/matlab'), simulations_time($n, $dim, $SNR, $K, $p, $repets),quit()" > tmpM
+fi
+Rscript source/R/sim_kmeans_time.R $n $p $SNR $K $dim $repets  
 fi

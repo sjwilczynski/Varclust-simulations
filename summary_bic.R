@@ -27,9 +27,7 @@ cols <- rep("#0074D9", max)
 cols[K] = "#FF4136"
 
 jpeg(filename=paste0("BIC_dim", max.dim, "_K", K, "_SNR", SNR, "_p", p, "_n", n, "_rep", reps, "_mode_", smode, ".jpg"))
-main.info = paste0("Estimated number of clusters.\n # repetitions=", reps, ", # clusters=", K, ", # observations=",n,
-                   ",\n # variables=", p, ", dimension=", max.dim,  ", SNR=", SNR, ", mode=", smode) 
-
+main.info = paste0("Estimated number of clusters for K=",K) 
 barplot(results$x[min:max], names.arg=min:max, col = cols[min:max], ylab = "Times choosen", xlab = "Number of clusters", border=TRUE)
 title(main.info)
 dev.off()

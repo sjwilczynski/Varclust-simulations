@@ -29,15 +29,17 @@ filename <- paste(filename, '.csv', sep='')
 write.csv(format(x=data,digits=6), file=filename)
 
 
-if(length(p) > 1){
+if(name == "#variables"){
 	xs <- p
+	name <- "number of variables"
 } else {
 	xs <- K
+	name <- "number of clusters"
 }
 jpeg(filename=paste0("Time_dim", max.dim, "_K", paste(K, collapse="_"), "_SNR", SNR, "_p", paste(p, collapse="_"), "_n", n, "_rep", repets, "_mode_", smode, ".jpg"))
-main.info = paste0("Execution time for ", name) 
+main.info = paste0("Execution time for different ", name) 
 cols <- c("#FF4136", "#0074D9", "#2ECC40", "#B10DC9")
 matplot(xs, data, type="b", xlab=name, ylab="execution time (seconds)", col = cols, pch=19, lty = "solid")
-legend("topleft", legend=colnames(data), col=cols, pch=19)
+legend("topleft", legend=colnames(data), col=cols, pch=19, horiz=TRUE)
 title(main.info)
 dev.off()

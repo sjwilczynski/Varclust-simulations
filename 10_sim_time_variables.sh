@@ -2,15 +2,15 @@
 #time
 
 N=(100)
-P=(300 600 900 1500)
+P=(300 600 900 1200 1500)
 SNR=(1)
 K=(5)
 MAXDIM=(3)
 runs=1
 MODE=(0)
-repets=1
+repets=100
 i=0
-name="number_of_variables"
+name="#variables"
 
 for n in ${N[*]}
 do
@@ -34,6 +34,6 @@ do
 		done
 	done
 done
-Rscript summary_time.R $N "c(300, 600, 900, 1500)" $SNR "c(5)" $MAXDIM $repets $MODE $name
+Rscript summary_time.R $N "c(300, 600, 900, 1200, 1500)" $SNR "c(5)" $MAXDIM $repets $MODE $name
 ./clean_folder.sh $name
 echo "DONE"

@@ -45,7 +45,7 @@ case $to_run in
         ;;
     "11" )
         echo "execution time with repsect to the number of clusters"
-        nohup ./10_sim_time_clusters.sh | tee nohup.out 
+        nohup ./11_sim_time_clusters.sh | tee nohup.out 
         ;;
     "test" )
         echo "test simulations"

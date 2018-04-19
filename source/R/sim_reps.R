@@ -27,10 +27,10 @@ if(name == "2maxdim"){
 
 #changing numb.cores to 1 is still not enough for reproducibility
 MLCC1.result <- mlcc.reps(X=X, numb.clusters=K, numb.runs=runs, max.dim=max.dim, max.iter = 50,
-                         numb.cores = 6, estimate.dimensions = TRUE)
+                         numb.cores = 6, estimate.dimensions = TRUE, deterministic = TRUE)
 MLCC2.result <- mlcc.reps(X=X, numb.clusters=K, max.dim=max.dim, max.iter = 50,
                          numb.cores = 6, estimate.dimensions = TRUE, 
-                         initial.segmentations = list(segmentationSSC))
+                         initial.segmentations = list(segmentationSSC), deterministic = TRUE)
 tryCatch({
     COV.segmentation <- kmeansvar(X.quanti=scale(X),init=K, nstart = 30, iter.max = 50)$cluster
 }, error = function(err) {

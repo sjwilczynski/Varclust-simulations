@@ -14,4 +14,3 @@
 ## Symulacje(moje) i przykład(Mateusza):
 
 1. Też powinny spełniać wymagania CRANowe, m.in. licencja.
-2. Reprodukowalność symulacji - jak ustawić seeda na wątkach.

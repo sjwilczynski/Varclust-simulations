@@ -39,10 +39,10 @@ for (i in 1:reps){
 	X <- sim.data$X
 	tryCatch({
 		mlcc.bic.res <- mlcc.bic(X=X, numb.clusters = min:max, numb.runs = runs, max.iter = 50, 
-				max.dim = max.dim, numb.cores = 2, estimate.dimensions = TRUE)
+				max.dim = max.dim, numb.cores = 2, estimate.dimensions = TRUE, , deterministic=TRUE)
 		}, error = function(err) {
-	    print(err)
-	    traceback()
+			print(err)
+			traceback()
 	    
 	})
 	estimated <- mlcc.bic.res[[4]]

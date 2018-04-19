@@ -29,7 +29,7 @@ filename <- paste(filename, '.csv', sep='')
 write.csv(format(x=data,digits=6), file=filename)
 
 
-if(name == "#variables"){
+if(name == "#variables" || name == "test_time"){
 	xs <- p
 	name <- "number of variables"
 } else {

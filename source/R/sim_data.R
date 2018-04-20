@@ -13,12 +13,12 @@ i       <- as.numeric(args[7]) #iteration identifier
 set.seed(i)
 
 if(mode == 0){
-	sim.data <- data.simulation.factors(n = n, SNR = SNR, K = K, numb.vars = p/K,
+	X <- data.simulation.factors(n = n, SNR = SNR, K = K, numb.vars = p/K,
                                     	numb.factors = K*max.dim/2,
                                     	min.dim = 2, max.dim = max.dim,
                                     	equal.dims = FALSE, separation.parameter = 0.2)$X
 } else {
-	sim.data <- data.simulation(n = n, SNR = SNR, K = K, numb.vars = p/K,
+	X <- data.simulation(n = n, SNR = SNR, K = K, numb.vars = p/K,
                             	min.dim = 2, max.dim = max.dim,
                             	equal.dims = FALSE)$X
 }

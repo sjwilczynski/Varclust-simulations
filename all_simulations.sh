@@ -47,6 +47,10 @@ case $to_run in
         echo "execution time with repsect to the number of clusters"
         nohup ./11_sim_time_clusters.sh | tee nohup.out 
         ;;
+    "12" )
+        echo "mBIC with repsect to the number of iterations"
+        nohup ./12_sim_iter.sh | tee nohup.out 
+        ;;
     "test" )
         echo "test simulations"
         nohup ./testbicsim.sh | tee nohup.out
@@ -65,6 +69,7 @@ case $to_run in
         nohup ./8_sim_snr_mode_not_shared.sh | tee nohup.out 
         nohup ./9_sim_snr_mode_shared.sh | tee nohup.out 
         nohup ./10_sim_time_variables.sh | tee nohup.out 
-        nohup ./11_sim_time_clusters.sh | tee nohup.out 
+        nohup ./11_sim_time_clusters.sh | tee nohup.out
+        nohup ./12_sim_iter.sh | tee nohup.out  
         ;;
 esac

@@ -10,8 +10,9 @@ mkdir -p summaries/$name/results
 mkdir -p summaries/$name/ouputs
 mv  output_* summaries/$name/ouputs
 mv  bic_* summaries/$name/ouputs
+mv  iterations_* summaries/$name/ouputs
 
 mv  ARI* summaries/$name/results
 mv  BIC* summaries/$name/results
 mv  Time* summaries/$name/results
-
+mv  Iterations* summaries/$name/results

@@ -16,13 +16,12 @@ if(mode == 0){
 	sim.data <- data.simulation.factors(n = n, SNR = SNR, K = K, numb.vars = p/K,
                                     	numb.factors = K*max.dim/2,
                                     	min.dim = 2, max.dim = max.dim,
-                                    	equal.dims = FALSE, separation.parameter = 0.2)
+                                    	equal.dims = FALSE, separation.parameter = 0.2)$X
 } else {
 	sim.data <- data.simulation(n = n, SNR = SNR, K = K, numb.vars = p/K,
                             	min.dim = 2, max.dim = max.dim,
-                            	equal.dims = FALSE)
+                            	equal.dims = FALSE)$X
 }
-X <- sim.data$X
 
 file.name = paste("data/X_", max.dim, "_", SNR, ".csv", sep='')
 write.table(X, file=file.name, row.names=F, col.names=F, sep=',')

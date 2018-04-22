@@ -48,7 +48,7 @@ end
 filename = ['../../timeMATLAB', num2str(dim) '.csv'];
 fid = fopen(filename,'at');   
 fprintf(fid, '%.4f,', totalSSC/repets);  
-fprintf(fid, '%.4f', totalLRSC);
+fprintf(fid, '%.4f', totalLRSC/repets);
 fprintf(fid, '\n');
 fclose(fid);
 %%

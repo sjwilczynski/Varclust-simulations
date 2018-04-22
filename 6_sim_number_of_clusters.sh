@@ -10,7 +10,7 @@ runs=30
 MODE=(0)
 repets=100
 i=0
-name="#ClustsModeNS"
+name="#ClustsModeS"
 
 for n in ${N[*]}
 do

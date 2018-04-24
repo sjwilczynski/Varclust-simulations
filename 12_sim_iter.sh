@@ -8,7 +8,7 @@ k=5
 snr=0.5
 maxdim=4
 numbruns=4
-maxiter=40
+maxiter=30
 
 for i in 0 1 2
 do

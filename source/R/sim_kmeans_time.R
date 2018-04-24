@@ -19,7 +19,7 @@ X <- as.matrix(X)
 true.segmentation <- unlist(lapply(1:K, function(i) rep(i,N)))
 
 
-result1 <- system.time(replicate(repets, mlcc.kmeans(X=X, number.clusters=K, max.subspace.dim=max.dim, max.iter = 40,
+result1 <- system.time(replicate(repets, mlcc.kmeans(X=X, number.clusters=K, max.subspace.dim=max.dim,
 	estimate.dimensions = TRUE)))[[3]]/repets
 
 result2 <- system.time(replicate(repets, kmeansvar(X.quanti=scale(X),init=K, nstart = 1, iter.max = 40)))[[3]]/repets

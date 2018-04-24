@@ -25,17 +25,17 @@ if(name == "2maxdim"){
 	max.dim = 2*max.dim
 }
 
-MLCC1.result <- mlcc.reps(X=X, numb.clusters=K, numb.runs=runs, max.dim=max.dim, max.iter = 50,
+MLCC1.result <- mlcc.reps(X=X, numb.clusters=K, numb.runs=runs, max.dim=max.dim,
                          numb.cores = 6, estimate.dimensions = TRUE, deterministic = TRUE)
-MLCC2.result <- mlcc.reps(X=X, numb.clusters=K, max.dim=max.dim, max.iter = 50,
+MLCC2.result <- mlcc.reps(X=X, numb.clusters=K, max.dim=max.dim,
                          numb.cores = 6, estimate.dimensions = TRUE, 
                          initial.segmentations = list(segmentationSSC), deterministic = TRUE)
 tryCatch({
     COV.segmentation <- kmeansvar(X.quanti=scale(X),init=K, nstart = 30, iter.max = 50)$cluster
 }, error = function(err) {
-    # Błąd w poleceniu 'svd(Ztilde)': a dimension is zero
-    # Wywołania kmeansvar -> do_one _> clusterscore -> svd
-    # Put here something dummy
+    # Error in 'svd(Ztilde)': a dimension is zero
+    # kmeansvar -> do_one _> clusterscore -> svd
+    # use any segmentation instead
     COV.segmentation <- rep(1,p)
 })
 

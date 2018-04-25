@@ -11,7 +11,7 @@
 
 1. Wszystko w overleafie
 
-## Symulacje(moje) i przykład(Mateusza):
+## Symulacje(moje) i przykład(Mateusza)
 
 1. Też powinny spełniać wymagania CRANowe, m.in. licencja.
 2. [Styl w R](https://google.github.io/styleguide/Rguide.xml)

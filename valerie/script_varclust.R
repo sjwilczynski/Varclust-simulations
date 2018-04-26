@@ -7,7 +7,7 @@ numb.cores  <- as.numeric(args[2]) # number of processor's cores to use
 numb.runs   <- as.numeric(args[3]) # number of random initializations
 max.iter    <- as.numeric(args[4]) # number of iterations of the algorithm
 clusts      <- eval(parse(text=args[5])) #number of clusters to test
-filename    <- args[6]
+filename    <- args[6] #name of the file in which data is stored
 
 
 x <- read.table(filename, header = T)
@@ -20,7 +20,9 @@ for(num_clust in clusts){
   print("Saving results")
   filename = paste("mlcc_res", num_clust, ".RData", sep = "")
   save(res, file = filename)
-  rm(res)
+  rm(res) #for memory 
   # to read data into R use "load(filename)"
   # the result is now in the res variable
+  # so you can for example check dimensionalities of each subpace using dims <- vapply(res$basis, ncol, 9)
+  # to find number of variables in each cluster: lens <- NULL: for(i in 1:K){lens <- c(lens, res$segmentation[res$segmentation==i])}
 }

@@ -18,7 +18,7 @@ for(num_clust in clusts){
                    max.dim = max.dim, numb.cores = numb.cores, max.iter = max.iter)
   print(paste("Finished mlcc.reps for", num_clust, "clusters", sep = " "))
   print("Saving results")
-  filename = paste("mlcc_res", num_clust, ".RData", sep = "")
+  filename = paste("mlcc_res", paste(num_clust, max.dim, numb.runs, max.iter, sep="_"), ".RData", sep = "")
   save(res, file = filename)
   rm(res) #for memory 
   # to read data into R use "load(filename)"

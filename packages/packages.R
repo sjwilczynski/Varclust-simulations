@@ -20,5 +20,5 @@ if(!require("pesel")){
   devtools::install_github("psobczyk/pesel")
 }
 if(!require("varclust")){
-  devtools::install_github("psobczyk/varclust")
+  devtools::install_github("sjwilczynski/varclust")
 }

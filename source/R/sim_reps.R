@@ -26,10 +26,10 @@ if(name == "2maxdim"){
 }
 
 MLCC1.result <- mlcc.reps(X=X, numb.clusters=K, numb.runs=runs, max.dim=max.dim,
-                         numb.cores = 6, estimate.dimensions = TRUE, deterministic = TRUE)
+                         numb.cores = 6, estimate.dimensions = TRUE)
 MLCC2.result <- mlcc.reps(X=X, numb.clusters=K, max.dim=max.dim,
                          numb.cores = 6, estimate.dimensions = TRUE, 
-                         initial.segmentations = list(segmentationSSC), deterministic = TRUE)
+                         initial.segmentations = list(segmentationSSC))
 tryCatch({
     COV.segmentation <- kmeansvar(X.quanti=scale(X),init=K, nstart = 30, iter.max = 50)$cluster
 }, error = function(err) {

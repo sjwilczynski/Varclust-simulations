@@ -16,6 +16,9 @@ my_install("parallel")
 my_install("doParallel")
 my_install("foreach")
 my_install("xtable")
+if(!require("ClustOfVar")){
+  devtools::install_github("chavent/ClustOfVar")
+}
 if(!require("pesel")){
   devtools::install_github("psobczyk/pesel")
 }

@@ -6,14 +6,15 @@ K         <- as.numeric(args[1])
 max.dim   <- as.numeric(args[2])
 runs      <- as.numeric(args[3])
 name      <- args[4]
-file.name <- paste('data/X_', name '.csv', sep='')
-
-#setting seed
-set.seed(p+K)
+file.name <- paste('data/X_', name, '.csv', sep='')
 
 X <- read.table(file.name, header=F, sep=',')
 X <- as.matrix(X)
 p <- dim(X)[2]
+
+#setting seed
+set.seed(p+K)
+
 filename <- paste('segmentationMATLAB', name, '.csv', sep='')
 segmentationSSC <- read.table(file=filename, sep=",")[1,1:p]
 

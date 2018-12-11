@@ -16,7 +16,7 @@ for n in ${N[*]}
 do
 	for p in ${P[*]}
 	do
-		for snr in ${SNR[*]}
+		for snr in "${SNR[@]}"
 		do
 			for k in ${K[*]}
 			do
@@ -25,8 +25,8 @@ do
 					for mode in ${MODE[*]}
 					do
 						((i++))
-						echo "Run $i start. Parameters: n=$n, p=$p, snr=$snr, k=$k, maxdim=$maxdim, mode=$mode"
-						nohup ./sim_reps.sh $n $p $snr $k $maxdim $runs $repets $mode $name
+						echo "Run $i start. Parameters: n=$n, p=$p, snr="${snr}", k=$k, maxdim=$maxdim, mode=$mode"
+						nohup ./sim_reps.sh $n $p "${snr}" $k $maxdim $runs $repets $mode $name
 						echo "Run $i done."
 					done
 				done

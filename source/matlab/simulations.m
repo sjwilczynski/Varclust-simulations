@@ -1,7 +1,7 @@
 % Piotr Sobczyk
 
-function mis = simulations(K, name)
-filename = ['../../data/X_' name '.csv'];
+function mis = simulations(K, dim, name)
+filename = strcat('../../data/X_', name, '.csv');
 X = csvread(filename);
 n = size(X,1)
 p = size(X,2)
@@ -41,7 +41,7 @@ CKSym = abs(C);
 
 %mis=[MissrateSSC, MissrateLR];
 
-filename = ['../../segmentationMATLAB', name '.csv'];
+filename = strcat('../../segmentationMATLAB', name, '.csv');
 fid = fopen(filename,'at');   
 fprintf(fid, '%d,', GrpsSSC);
 fprintf(fid, '\n');  

@@ -24,22 +24,22 @@ do
     rm -f segmentation*
     echo "Rep $i"
     #echo "Generating dataset"
-    Rscript source/R/sim_data.R $n $p $SNR $K $dim $mode $i $name
+    Rscript source/R/sim_data.R $n $p "${SNR}" $K $dim $mode $i $name
     #echo $dim
 
     #echo "dataset simulated"
     #echo "SSC and LRSC"
     if [ "$nazwa" == "stachu" ]
     then
-    /usr/local/MATLAB/R2016a/bin/matlab -nosplash -nodisplay -nojvm -r "cd('source/matlab'), simulations($K, $name),quit()" > tmpM
+    /usr/local/MATLAB/R2016a/bin/matlab -nosplash -nodisplay -nojvm -r "cd('source/matlab'), simulations($K, $dim, '${name}'),quit()" > tmpM
     else
-    matlab -nosplash -nodisplay -nojvm -r "cd('source/matlab'), simulations($K, $name),quit()" > tmpM 
+    matlab -nosplash -nodisplay -nojvm -r "cd('source/matlab'), simulations($K, $dim, '${name}'),quit()" > tmpM 
     fi
     #echo "MLCC and ClustOfVar"
     Rscript source/R/sim_reps.R $K $dim $runs $name
     #echo "Analysis of the results"
-    Rscript source/R/results_analysis.R $n $p $SNR $K $dim $mode $i $name
+    Rscript source/R/results_analysis.R $n $p "${SNR}" $K $dim $mode $i $name
 done
 #echo "Summary"
-Rscript summary.R $n $p $SNR $K $dim $repets $mode $name
+Rscript summary.R $n $p "${SNR}" $K $dim $repets $mode $name
 fi

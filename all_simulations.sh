@@ -51,6 +51,10 @@ case $to_run in
         echo "mBIC with repsect to the number of iterations"
         nohup ./12_sim_iter.sh | tee nohup.out 
         ;;
+    "13" )
+        echo "mlcc.reps with different SNR in each cluster"
+        nohup ./13_sim_iter.sh | tee nohup.out 
+        ;;
     "test" )
         echo "test simulations"
         nohup ./testbicsim.sh | tee nohup.out
@@ -71,5 +75,6 @@ case $to_run in
         nohup ./10_sim_time_variables.sh | tee nohup.out 
         nohup ./11_sim_time_clusters.sh | tee nohup.out
         nohup ./12_sim_iter.sh | tee nohup.out  
+        nohup ./13_sim_iter.sh | tee nohup.out 
         ;;
 esac

@@ -8,8 +8,9 @@ SNR       <- as.numeric(args[3])
 K         <- as.numeric(args[4])
 max.dim   <- as.numeric(args[5])
 repets    <- as.numeric(args[6])
-file.name <- paste('data/X_', max.dim, '_', SNR, '.csv', sep='')
+file.name <- paste('data/X_', name '.csv', sep='')
 N         <- p/K
+name 	  <- as.numeric(args[7])
 
 #setting seed
 set.seed(n+K)
@@ -27,5 +28,5 @@ result2 <- system.time(replicate(repets, kmeansvar(X.quanti=scale(X),init=K, nst
 result <- list(result2, result1)
 
 data <- do.call(cbind, result)
-filename <- paste('timeR', max.dim, '.csv', sep='')
+filename <- paste('timeR', name, '.csv', sep='')
 write.table(x=data, file=filename, sep="," , append=T, col.names=F, row.names=F)

@@ -1,10 +1,12 @@
 % Piotr Sobczyk
 
-function mis = simulations_time(n, dim, sigma, K, p, repets)
-filename = ['../../data/X_'  num2str(dim) '_'  num2str(sigma) '.csv'];
+function mis = simulations(K, name)
+filename = ['../../data/X_' name '.csv'];
 X = csvread(filename);
+n = size(X,1)
+p = size(X,2)
 %normalizing X
-for i=1:size(X,2)
+for i=1:p
    X(:,i) = X(:,i) - repmat(mean(X(:,i)), size(X,1), 1); 
 end
 %X = normc(X); -nie mam tego toolboxa
@@ -45,7 +47,7 @@ for i = 1:repets
     totalLRSC = totalLRSC + LRSCtime;
 end
 
-filename = ['../../timeMATLAB', num2str(dim) '.csv'];
+filename = ['../../timeMATLAB', name '.csv'];
 fid = fopen(filename,'at');   
 fprintf(fid, '%.4f,', totalSSC/repets);  
 fprintf(fid, '%.4f', totalLRSC/repets);

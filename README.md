@@ -1,7 +1,7 @@
 # Simulations for *varclust* package
 
 In this repository there are all scripts used to evaluate *varclust* performance
-on synthetic datasets. All the figures from ... can be recreated using this code.
+on synthetic datasets. All the figures from my bachelor thesis/varclust paper can be recreated using this code.
 
 ## Preparation
 

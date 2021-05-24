@@ -8,7 +8,7 @@ SNR       <- as.numeric(args[3])
 K         <- as.numeric(args[4])
 max.dim   <- as.numeric(args[5])
 repets    <- as.numeric(args[6])
-name      <- as.numeric(args[7])
+name      <- args[7]
 file.name <- paste('data/', name, '/X_', max.dim, '_', SNR, '.csv', sep='')
 N         <- p/K
 

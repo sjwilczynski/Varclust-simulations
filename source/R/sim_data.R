@@ -8,7 +8,7 @@ K       <- as.numeric(args[4]) #number of subspaces
 max.dim <- as.numeric(args[5]) #maximal subspace dimension
 mode    <- as.numeric(args[6]) #shared/ not shared facors
 i       <- as.numeric(args[7]) #iteration identifier
-name    <- as.numeric(args[8]) #folder name
+name    <- args[8] #folder name
 
 #setting seed
 set.seed(i)

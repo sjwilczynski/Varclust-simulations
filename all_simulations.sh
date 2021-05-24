@@ -56,6 +56,7 @@ case $to_run in
         nohup ./testbicsim.sh | tee nohup.out
         nohup ./testsim.sh | tee nohup.out
         nohup ./testtimesim.sh | tee nohup.out 
+        nohup ./testiter.sh | tee nohup.out 
         ;;
     "all" )
         echo "Run all simulations"

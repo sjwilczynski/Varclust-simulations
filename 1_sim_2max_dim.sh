@@ -12,6 +12,9 @@ repets=100
 i=0
 name="2maxdim"
 
+mkdir -p $name
+mkdir -p $data/name
+
 for n in ${N[*]}
 do
 	for p in ${P[*]}

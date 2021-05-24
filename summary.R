@@ -18,7 +18,7 @@ INT <- NULL
 ACONT <- NULL
 for(i in 1:repets){
   filename <- paste('output', name, n, p, SNR, K, max.dim, mode, i, sep='_')
-  filename <- paste(filename, '.csv', sep='')
+  filename <- paste(name, '/', filename, '.csv', sep='')
   results <- read.csv(filename, sep=" ")
   score[which.max(results$ARI)] = score[which.max(results$ARI)] + 1
   conc = conc + ( which.max(results$BIC)==which.max(results$ARI) )

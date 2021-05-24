@@ -25,21 +25,22 @@ data <- cbind( dataMatlab, dataR )
 colnames(data) <- c("SSC","LRSC","COV","MLCC")
 
 filename <- paste('output',name, n, paste(p, collapse="_"), SNR, paste(K, collapse="_"), max.dim, smode, sep='_')
-filename <- paste(filename, '.csv', sep='')
+filename <- paste(name, '/', filename, '.csv', sep='')
 write.csv(format(x=data,digits=6), file=filename)
 
+plot.name = ""
 
 if(name == "#variables" || name == "test_time"){
 	xs <- p
-	name <- "number of variables"
+	plot.name <- "number of variables"
 } else {
 	xs <- K
-	name <- "number of clusters"
+	plot.name <- "number of clusters"
 }
 jpeg(filename=paste0(name, "/Time_dim", max.dim, "_K", paste(K, collapse="_"), "_SNR", SNR, "_p", paste(p, collapse="_"), "_n", n, "_rep", repets, "_mode_", smode, ".jpg"))
-main.info = paste0("Execution time for different ", name) 
+main.info = paste0("Execution time for different ", plot.name) 
 cols <- c("#FF4136", "#0074D9", "#2ECC40", "#B10DC9")
-matplot(xs, data, type="b", xlab=name, ylab="execution time (seconds)", col = cols, pch=19, lty = "solid")
+matplot(xs, data, type="b", xlab=plot.name, ylab="execution time (seconds)", col = cols, pch=19, lty = "solid")
 legend("topleft", legend=colnames(data), col=cols, pch=19, horiz=TRUE)
 title(main.info)
 dev.off()

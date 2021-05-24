@@ -11,7 +11,7 @@ numbruns=4
 maxiter=30
 
 mkdir -p $name
-mkdir -p $data/name
+mkdir -p data/$name
 
 for i in 0 1 2
 do

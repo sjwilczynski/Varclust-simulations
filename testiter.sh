@@ -12,7 +12,7 @@ maxiter=30
 i=0
 
 mkdir -p $name
-mkdir -p $data/name
+mkdir -p data/$name
 
 do
     echo "Run $i start. Parameters: n=$n, p=${P[$i]}, snr=$snr, k=$k, maxdim=$maxdim, numbruns=$numbruns, maxiter=$maxiter"

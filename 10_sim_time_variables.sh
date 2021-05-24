@@ -13,7 +13,7 @@ i=0
 name="#variables"
 
 mkdir -p $name
-mkdir -p $data/name
+mkdir -p data/$name
 
 for n in ${N[*]}
 do

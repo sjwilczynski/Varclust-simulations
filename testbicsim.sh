@@ -13,7 +13,7 @@ i=0
 name="test_bic"
 
 mkdir -p $name
-mkdir -p $data/name
+mkdir -p data/$name
 
 for n in ${N[*]}
 do

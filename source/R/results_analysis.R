@@ -13,13 +13,13 @@ rep = as.numeric(args[7])
 name = args[8]
 
 
-file.name = paste('data/X_', max.dim, '_', SNR, '.csv', sep='')
+file.name = paste('data/', name, '/X_', max.dim, '_', SNR, '.csv', sep='')
 X = read.table(file.name, header=F, sep=',')
 X = as.matrix(X)
 
-filename <- paste('segmentationR', max.dim, '.csv', sep='')
+filename <- paste(name, '/segmentationR', max.dim, '.csv', sep='')
 segmentationR <- read.table(file=filename, sep=",")
-filename <- paste('segmentationMATLAB', max.dim, '.csv', sep='')
+filename <- paste(name, '/segmentationMATLAB', max.dim, '.csv', sep='')
 segmentationMATLAB <- read.table(file=filename, sep=",")
 true_segmentation <- rep(1:K, each=p/K)
 segmentationMATLAB <- as.matrix(segmentationMATLAB)
@@ -73,5 +73,5 @@ rownames(dane) <- c("SSC", "LRSC", "MLCC","aSSC","COV")
 tableCaption <- paste("Simulated \\newline
           D=", p, "; n=", n, "; SNR=", SNR, "; K=", K, "; max.dim=", max.dim, ";")
 filename <- paste('output', name, n, p, SNR, K, max.dim, mode, rep, sep='_')
-filename <- paste(filename, '.csv', sep='')
+filename <- paste(name, '/', filename, '.csv', sep='')
 write.table(format(x=dane,digits=3), file=filename)

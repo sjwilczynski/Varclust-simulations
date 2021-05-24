@@ -1,7 +1,7 @@
 % Piotr Sobczyk
 
-function mis = simulations_time(n, dim, sigma, K, p, repets)
-filename = ['../../data/X_'  num2str(dim) '_'  num2str(sigma) '.csv'];
+function mis = simulations_time(name, n, dim, sigma, K, p, repets)
+filename = ['../../data/' name '/X_'  num2str(dim) '_'  num2str(sigma) '.csv'];
 X = csvread(filename);
 %normalizing X
 for i=1:size(X,2)
@@ -45,7 +45,7 @@ for i = 1:repets
     totalLRSC = totalLRSC + LRSCtime;
 end
 
-filename = ['../../timeMATLAB', num2str(dim) '.csv'];
+filename = ['../../' name '/timeMATLAB', num2str(dim) '.csv'];
 fid = fopen(filename,'at');   
 fprintf(fid, '%.4f,', totalSSC/repets);  
 fprintf(fid, '%.4f', totalLRSC/repets);

@@ -31,13 +31,13 @@ for (i in 1:numb.runs) {
   }
 }
 
-filename <- paste(paste("iterations", n, p, K, sep = "_"), ".csv")
+filename <- paste(name, paste("/iterations", n, p, K, sep = "_"), ".csv")
 write.table(x = results, file = filename,
             sep = ",", col.names = F, row.names = F)
                       
 
 
-jpeg(filename = paste0("Iterations_dim", max.dim, "_K", K, "_SNR", SNR, "_p", p, "_n", n, "_mode_", smode, ".jpg"))
+jpeg(filename = paste0(name, "/Iterations_dim", max.dim, "_K", K, "_SNR", SNR, "_p", p, "_n", n, "_mode_", smode, ".jpg"))
 main.info <- paste0("Value of mBIC after given number of iterations") 
 cols <- c("#FF4136", "#0074D9", "#2ECC40", "#B10DC9")
 matplot(1:max.iter, t(results), type = "b", xlab = "iteration", ylab = "mBIC", col = cols, pch = 19, lty = "solid")

@@ -38,7 +38,7 @@ if(mode == 0){
 	smode <- "not_shared"
 }
 
-jpeg(filename=paste0("ARI_dim", max.dim, "_K", K, "_SNR", SNR, "_p", p, "_n", n, "_rep", repets, "_mode_", smode, ".jpg"))
+jpeg(filename=paste0(name, "/ARI_dim", max.dim, "_K", K, "_SNR", SNR, "_p", p, "_n", n, "_rep", repets, "_mode_", smode, ".jpg"))
 main.info = paste0("Values of ARI, Integration and Acontamination") 
 boxplot(ARI, ylab = "", xaxt = "n", boxwex = 0.1, ylim = c(minimum,maximum), col = "#FF4136")
 boxplot(INT, ylab = "", xaxt = "n", boxwex = 0.1, at = -0.2+1:howmany_methods, add = TRUE, col = "#0074D9")

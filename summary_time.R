@@ -15,8 +15,8 @@ if(mode == 0){
 	smode <- "not_shared"
 }
 
-filenameR <- paste0(prev, "timeR", max.dim, ".csv")
-filenameMatlab <-  paste0(prev, "timeMATLAB", max.dim, ".csv")
+filenameR <- paste0(prev, name, "/timeR", max.dim, ".csv")
+filenameMatlab <-  paste0(prev, name, "/timeMATLAB", max.dim, ".csv")
 dataR <- read.table(filenameR, header=F, sep=',')
 dataMatlab <- read.table(filenameMatlab, header=F, sep=',')
 
@@ -36,7 +36,7 @@ if(name == "#variables" || name == "test_time"){
 	xs <- K
 	name <- "number of clusters"
 }
-jpeg(filename=paste0("Time_dim", max.dim, "_K", paste(K, collapse="_"), "_SNR", SNR, "_p", paste(p, collapse="_"), "_n", n, "_rep", repets, "_mode_", smode, ".jpg"))
+jpeg(filename=paste0(name, "/Time_dim", max.dim, "_K", paste(K, collapse="_"), "_SNR", SNR, "_p", paste(p, collapse="_"), "_n", n, "_rep", repets, "_mode_", smode, ".jpg"))
 main.info = paste0("Execution time for different ", name) 
 cols <- c("#FF4136", "#0074D9", "#2ECC40", "#B10DC9")
 matplot(xs, data, type="b", xlab=name, ylab="execution time (seconds)", col = cols, pch=19, lty = "solid")

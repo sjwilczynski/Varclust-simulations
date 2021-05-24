@@ -1,6 +1,6 @@
-my_install <- function(package_name="", repo="https://cran.rstudio.com"){
+my_install <- function(package_name=""){
   if(!require(package_name, character.only=TRUE)){
-    install.packages(package_name, repos = repo)
+    install.packages(package_name)
   }
 }
 

@@ -31,9 +31,9 @@ do
     #echo "SSC and LRSC"
     if [ "$nazwa" == "stachu" ]
     then
-    /usr/local/MATLAB/R2016a/bin/matlab -nosplash -nodisplay -nojvm -r "cd('source/matlab'), simulations($name, $n, $dim, $SNR, $K, $p),quit()" > $name/tmpM
+    /usr/local/MATLAB/R2016a/bin/matlab -nosplash -nodisplay -nojvm -r "cd('source/matlab'), simulations('$name', $n, $dim, $SNR, $K, $p),quit()" > $name/tmpM
     else
-    matlab -nosplash -nodisplay -nojvm -r "cd('source/matlab'), simulations($name, $n, $dim, $SNR, $K, $p),quit()" > $name/tmpM 
+    matlab -nosplash -nodisplay -nojvm -r "cd('source/matlab'), simulations('$name', $n, $dim, $SNR, $K, $p),quit()" > $name/tmpM 
     fi
     #echo "MLCC and ClustOfVar"
     Rscript source/R/sim_reps.R $n $p $SNR $K $dim $runs $name

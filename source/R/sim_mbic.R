@@ -7,7 +7,7 @@ args <- commandArgs(trailingOnly = TRUE)
 
 n         <- as.numeric(args[1])
 p         <- as.numeric(args[2])
-SNR       <- eval(parse(text=args[3]))
+SNR       <- as.numeric(args[3])
 K         <- as.numeric(args[4])
 max.dim   <- as.numeric(args[5])
 runs      <- as.numeric(args[6])
@@ -17,7 +17,7 @@ mode      <- as.numeric(args[8])
 name      <- args[9]
 
 #setting seed
-set.seed(p+K)
+set.seed(n+K)
 
 sd = min(20, round(K/2))
 min = K - sd
@@ -49,6 +49,6 @@ for (i in 1:reps){
 	cat("Rep", i ,"done\n")
 }
 
-filename <- paste('bic_output', name, sep='_')
+filename <- paste('bic_output', name, n, p, SNR, K, max.dim, mode, reps, sep='_')
 filename <- paste(filename, '.csv', sep='')
 write.table(format(x=results,digits=6), file=filename)

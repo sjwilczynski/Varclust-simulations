@@ -1,12 +1,10 @@
 % Piotr Sobczyk
 
-function mis = simulations(K, dim, name)
-filename = strcat('../../data/X_', name, '.csv');
+function mis = simulations(n, dim, sigma, K, p)
+filename = ['../../data/X_'  num2str(dim) '_'  num2str(sigma) '.csv'];
 X = csvread(filename);
-n = size(X,1)
-p = size(X,2)
 %normalizing X
-for i=1:p
+for i=1:size(X,2)
    X(:,i) = X(:,i) - repmat(mean(X(:,i)), size(X,1), 1); 
 end
 %X = normc(X); -nie mam tego toolboxa
@@ -41,7 +39,7 @@ CKSym = abs(C);
 
 %mis=[MissrateSSC, MissrateLR];
 
-filename = strcat('../../segmentationMATLAB', name, '.csv');
+filename = ['../../segmentationMATLAB', num2str(dim) '.csv'];
 fid = fopen(filename,'at');   
 fprintf(fid, '%d,', GrpsSSC);
 fprintf(fid, '\n');  

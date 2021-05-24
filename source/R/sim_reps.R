@@ -2,20 +2,22 @@ require(ClustOfVar, quietly = TRUE)
 require(varclust, quietly = TRUE)
 
 args <- commandArgs(trailingOnly = TRUE)
-K         <- as.numeric(args[1])
-max.dim   <- as.numeric(args[2])
-runs      <- as.numeric(args[3])
-name      <- args[4]
-file.name <- paste('data/X_', name, '.csv', sep='')
+n         <- as.numeric(args[1])
+p         <- as.numeric(args[2])
+SNR       <- as.numeric(args[3])
+K         <- as.numeric(args[4])
+max.dim   <- as.numeric(args[5])
+runs      <- as.numeric(args[6])
+file.name <- paste('data/X_', max.dim, '_', SNR, '.csv', sep='')
+N         <- p/K
+name      <- args[7]
+
+#setting seed
+set.seed(n+K)
 
 X <- read.table(file.name, header=F, sep=',')
 X <- as.matrix(X)
-p <- dim(X)[2]
-
-#setting seed
-set.seed(p+K)
-
-filename <- paste('segmentationMATLAB', name, '.csv', sep='')
+filename <- paste('segmentationMATLAB', max.dim, '.csv', sep='')
 segmentationSSC <- read.table(file=filename, sep=",")[1,1:p]
 
 
@@ -42,7 +44,7 @@ if(name == "2maxdim"){
 }
 
 
-filename <- paste('segmentationR', name, '.csv', sep='')
+filename <- paste('segmentationR', max.dim, '.csv', sep='')
 write.table(x=matrix(MLCC1.result$segmentation, nrow=1), file=filename,
             sep="," , append=T, col.names=F, row.names=F)
 write.table(x=matrix(MLCC2.result$segmentation, nrow=1), file=filename,

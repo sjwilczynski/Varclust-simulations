@@ -11,7 +11,7 @@ mode    <- as.numeric(args[6]) #shared/ not shared facors
 iter    <- as.numeric(args[7]) #number of iterations
 ratio   <- as.numeric(args[8]) #ration between subsequent SNRs
 
-set.seed(42)
+set.seed(n + p + SNR + K)
 
 if (length(SNR) == 1) {
   SNR <- 1:K * SNR
@@ -24,6 +24,5 @@ for (i in 1:iter) {
   system2("matlab", args = c("-nosplash", "-nodisplay", "-nojvm", "-r", command), stdout = "tmpM")
   #usuwanie tmpM i segmentation jak w bashowych, zapisywanie analizy pojedynczych ietracji normalnie do pliku, ale ogolnie przerobienie 
   #na funkcje tak jak sim.data
-  
   
 }

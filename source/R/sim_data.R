@@ -3,12 +3,11 @@ require(varclust, quietly = TRUE)
 args    <- commandArgs(trailingOnly = TRUE)
 n       <- as.numeric(args[1])
 p       <- as.numeric(args[2])
-SNR     <- eval(parse(text=args[3])) #Signal to Noise ratio
+SNR     <- as.numeric(args[3]) #Signal to Noise ratio
 K       <- as.numeric(args[4]) #number of subspaces
 max.dim <- as.numeric(args[5]) #maximal subspace dimension
 mode    <- as.numeric(args[6]) #shared/ not shared facors
 i       <- as.numeric(args[7]) #iteration identifier
-name    <- args[8]
 
 #setting seed
 set.seed(i)
@@ -24,5 +23,5 @@ if(mode == 0){
                             	equal.dims = FALSE)$X
 }
 
-file.name = paste("data/X_", name, ".csv", sep='')
+file.name = paste("data/X_", max.dim, "_", SNR, ".csv", sep='')
 write.table(X, file=file.name, row.names=F, col.names=F, sep=',')

@@ -37,6 +37,6 @@ do
 		done
 	done
 done
-Rscript summary_time.R $N "c(300, 600, 900, 1200, 1500)" $SNR "c(5)" $MAXDIM $repets $MODE $name
+Rscript source/R/summary_time.R $N "c(300, 600, 900, 1200, 1500)" $SNR "c(5)" $MAXDIM $repets $MODE $name
 ./clean_folder.sh $name
 echo "DONE"

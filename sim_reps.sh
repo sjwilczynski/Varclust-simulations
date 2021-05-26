@@ -41,5 +41,5 @@ do
     Rscript source/R/results_analysis.R $n $p $SNR $K $dim $mode $i $name
 done
 #echo "Summary"
-Rscript summary.R $n $p $SNR $K $dim $repets $mode $name
+Rscript source/R/summary.R $n $p $SNR $K $dim $repets $mode $name
 fi

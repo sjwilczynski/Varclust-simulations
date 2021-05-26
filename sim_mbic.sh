@@ -20,5 +20,5 @@ else
     #echo "Choosing number of cluster"
     Rscript source/R/sim_mbic.R $n $p $SNR $K $dim $runs $repets $mode $name
 #echo "Summary"
-Rscript summary_bic.R $n $p $SNR $K $dim $repets $mode $name
+Rscript source/R/summary_bic.R $n $p $SNR $K $dim $repets $mode $name
 fi

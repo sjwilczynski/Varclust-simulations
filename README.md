@@ -37,8 +37,8 @@ Additionally, due to the time needed to run each of the scripts, to prevent them
 1. Similarly run other simulation scripts on different machines
 1. After few days log back to the machine and reattach screen session using `screen -r` command
 1. Check if it's completed. If there was an issue:
-    1. Restart the simulation
-    1. If you think it's a bug (you can confirm this by looking at the relevant `nohup.out` file) report issue
+    1. Rerun the simulation
+    1. If you think it's a bug (you can confirm this by looking at the relevant `nohup.out` file) and report an issue
 
 **TIP** for running simulations in the Math department of Univesity of Wroclaw:
 Login to chaos and then run each of the simulations on machines from win01 to win12

@@ -10,7 +10,7 @@ max.dim   <- as.numeric(args[5])
 numb.runs <- as.numeric(args[6])
 max.iter  <- as.numeric(args[7])
 smode     <- "shared"
-name      <- args[7]
+name      <- args[8]
 
 #setting seed
 set.seed(n + K)
@@ -31,7 +31,7 @@ for (i in 1:numb.runs) {
   }
 }
 
-filename <- paste(name, paste("/iterations", n, p, K, sep = "_"), ".csv")
+filename <- paste0(name, paste("/iterations", n, p, K, sep = "_"), ".csv")
 write.table(x = results, file = filename,
             sep = ",", col.names = F, row.names = F)
                       

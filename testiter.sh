@@ -1,19 +1,20 @@
 #!/bin/bash
-#iterations
+#test_iter
 
-name="#iterations"
-n=100
-P=(750 1500 3000)
+name="test_iter"
+n=10
+P=(50)
 k=5
 snr=0.5
-maxdim=4
-numbruns=4
+maxdim=3
+numbruns=3
 maxiter=30
+iters=(0)
 
 mkdir -p $name
 mkdir -p data/$name
 
-for i in 0 1 2
+for i in ${iters[*]}
 do
     echo "Run $i start. Parameters: n=$n, p=${P[$i]}, snr=$snr, k=$k, maxdim=$maxdim, numbruns=$numbruns, maxiter=$maxiter name=$name"
     nohup Rscript source/R/sim_iter.R $n ${P[$i]} $snr $k $maxdim $numbruns $maxiter $name

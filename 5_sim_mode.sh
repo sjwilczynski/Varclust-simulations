@@ -12,6 +12,9 @@ repets=100
 i=0
 name="mode"
 
+mkdir -p $name
+mkdir -p data/$name
+
 for n in ${N[*]}
 do
 	for p in ${P[*]}
@@ -25,7 +28,7 @@ do
 					for mode in ${MODE[*]}
 					do
 						((i++))
-						echo "Run $i start. Parameters: n=$n, p=$p, snr=$snr, k=$k, maxdim=$maxdim, mode=$mode"
+						echo "Run $i start. Parameters: n=$n, p=$p, snr=$snr, k=$k, maxdim=$maxdim, mode=$mode, name=$name"
 						nohup ./sim_reps.sh $n $p $snr $k $maxdim $runs $repets $mode $name
 						echo "Run $i done." 
 					done

@@ -21,19 +21,19 @@ else
 
 for i in $(seq 1 $repets)
 do
-    rm -f segmentation*
+    rm -f $name/segmentation*
     echo "Rep $i"
     #echo "Generating dataset"
-    Rscript source/R/sim_data.R $n $p $SNR $K $dim $mode $i
+    Rscript source/R/sim_data.R $n $p $SNR $K $dim $mode $i $name
     #echo $dim
 
     #echo "dataset simulated"
     #echo "SSC and LRSC"
     if [ "$nazwa" == "stachu" ]
     then
-    /usr/local/MATLAB/R2016a/bin/matlab -nosplash -nodisplay -nojvm -r "cd('source/matlab'), simulations($n, $dim, $SNR, $K, $p),quit()" > tmpM
+    /usr/local/MATLAB/R2016a/bin/matlab -nosplash -nodisplay -nojvm -r "cd('source/matlab'), simulations('$name', $n, $dim, $SNR, $K, $p),quit()" > $name/tmpM
     else
-    matlab -nosplash -nodisplay -nojvm -r "cd('source/matlab'), simulations($n, $dim, $SNR, $K, $p),quit()" > tmpM 
+    matlab -nosplash -nodisplay -nojvm -r "cd('source/matlab'), simulations('$name', $n, $dim, $SNR, $K, $p),quit()" > $name/tmpM 
     fi
     #echo "MLCC and ClustOfVar"
     Rscript source/R/sim_reps.R $n $p $SNR $K $dim $runs $name

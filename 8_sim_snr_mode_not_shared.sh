@@ -10,7 +10,7 @@ runs=30
 MODE=(1)
 repets=100
 i=0
-name="SNRmodeNS"
+name="8_sim_snr_mode_not_shared"
 
 mkdir -p $name
 mkdir -p data/$name

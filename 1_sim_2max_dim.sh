@@ -10,7 +10,7 @@ runs=30
 MODE=(0)
 repets=100
 i=0
-name="2maxdim"
+name="1_sim_2max_dim"
 
 mkdir -p $name
 mkdir -p data/$name

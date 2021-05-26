@@ -10,7 +10,7 @@ runs=30
 MODE=(0)
 repets=100
 i=0
-name="#Vars"
+name="7_sim_number_of_vars"
 
 mkdir -p $name
 mkdir -p data/$name

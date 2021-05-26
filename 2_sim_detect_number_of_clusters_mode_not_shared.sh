@@ -10,7 +10,7 @@ runs=30
 MODE=(1)
 repets=100
 i=0
-name="detect#ClustsModeNS"
+name="2_sim_detect_number_of_clusters_mode_not_shared"
 
 mkdir -p $name
 mkdir -p data/$name

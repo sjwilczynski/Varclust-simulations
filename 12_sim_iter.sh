@@ -1,7 +1,7 @@
 #!/bin/bash
 #iterations
 
-name="#iterations"
+name="12_sim_iter"
 n=100
 P=(750 1500 3000)
 k=5

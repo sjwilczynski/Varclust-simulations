@@ -10,7 +10,7 @@ runs=30
 MODE=(0)
 repets=100
 i=0
-name="#ClustsModeS"
+name="6_sim_number_of_clusters"
 
 mkdir -p $name
 mkdir -p data/$name

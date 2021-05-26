@@ -10,7 +10,7 @@ runs=1
 MODE=(0)
 repets=100
 i=0
-name="#clusters"
+name="11_sim_time_clusters"
 
 mkdir -p $name
 mkdir -p data/$name

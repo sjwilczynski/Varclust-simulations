@@ -10,7 +10,7 @@ runs=30
 MODE=(0)
 repets=100
 i=0
-name="SNRmodeS"
+name="9_sim_snr_mode_shared"
 
 mkdir -p $name
 mkdir -p data/$name

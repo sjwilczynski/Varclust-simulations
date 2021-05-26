@@ -10,7 +10,7 @@ runs=30
 MODE=(0 1)
 repets=100
 i=0
-name="mode"
+name="5_sim_mode"
 
 mkdir -p $name
 mkdir -p data/$name

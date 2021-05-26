@@ -10,7 +10,7 @@ runs=30
 MODE=(0)
 repets=100
 i=0
-name="maxdim"
+name="4_sim_max_dim"
 
 mkdir -p $name
 mkdir -p data/$name

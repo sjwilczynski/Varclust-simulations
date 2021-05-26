@@ -16,7 +16,7 @@ mkdir -p data/$name
 
 for i in ${iters[*]}
 do
-    echo "Run $i start. Parameters: n=$n, p=${P[$i]}, snr=$snr, k=$k, maxdim=$maxdim, numbruns=$numbruns, maxiter=$maxiter"
+    echo "Run $i start. Parameters: n=$n, p=${P[$i]}, snr=$snr, k=$k, maxdim=$maxdim, numbruns=$numbruns, maxiter=$maxiter name=$name"
     nohup Rscript source/R/sim_iter.R $n ${P[$i]} $snr $k $maxdim $numbruns $maxiter $name
     echo "Run $i done."
 done

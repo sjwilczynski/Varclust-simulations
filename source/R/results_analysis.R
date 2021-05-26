@@ -69,7 +69,7 @@ for (i in 1:howManyR){
 
 dane <- data.frame(dane)
 colnames(dane)= c("ARI", "BIC", "Integration", "Acontamination")
-rownames(dane) <- c("SSC", "LRSC", "MLCC","aSSC","COV")
+rownames(dane) <- c("SSC", "LRSC", "VARCLUST","aSSC","COV")
 tableCaption <- paste("Simulated \\newline
           D=", p, "; n=", n, "; SNR=", SNR, "; K=", K, "; max.dim=", max.dim, ";")
 filename <- paste('output', name, n, p, SNR, K, max.dim, mode, rep, sep='_')

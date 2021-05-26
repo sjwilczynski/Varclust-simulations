@@ -22,7 +22,7 @@ dataMatlab <- read.table(filenameMatlab, header=F, sep=',')
 
 
 data <- cbind( dataMatlab, dataR )
-colnames(data) <- c("SSC","LRSC","COV","MLCC")
+colnames(data) <- c("SSC","LRSC","COV","VARCLUST")
 
 filename <- paste('output',name, n, paste(p, collapse="_"), SNR, paste(K, collapse="_"), max.dim, smode, sep='_')
 filename <- paste(name, '/', filename, '.csv', sep='')

@@ -50,5 +50,5 @@ for (i in 1:reps){
 }
 
 filename <- paste('bic_output', name, n, p, SNR, K, max.dim, mode, reps, sep='_')
-filename <- paste(filename, '.csv', sep='')
+filename <- paste(name, '/', filename, '.csv', sep='')
 write.table(format(x=results,digits=6), file=filename)

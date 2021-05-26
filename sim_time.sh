@@ -18,12 +18,12 @@ if [ $y != $p ]
 then
     echo "K does not divide p. ERROR"
 else
-Rscript source/R/sim_data.R $n $p $SNR $K $dim $mode $K
+Rscript source/R/sim_data.R $n $p $SNR $K $dim $mode $K $name
 if [ "$nazwa" == "stachu" ]
 then
-/usr/local/MATLAB/R2016a/bin/matlab -nosplash -nodisplay -nojvm -r "cd('source/matlab'), simulations_time($n, $dim, $SNR, $K, $p, $repets),quit()" > tmpM
+/usr/local/MATLAB/R2016a/bin/matlab -nosplash -nodisplay -nojvm -r "cd('source/matlab'), simulations_time('$name', $n, $dim, $SNR, $K, $p, $repets),quit()" > $name/tmpM
 else
-matlab -nosplash -nodisplay -nojvm -r "cd('source/matlab'), simulations_time($n, $dim, $SNR, $K, $p, $repets),quit()" > tmpM
+matlab -nosplash -nodisplay -nojvm -r "cd('source/matlab'), simulations_time('$name', $n, $dim, $SNR, $K, $p, $repets),quit()" > $name/tmpM
 fi
-Rscript source/R/sim_kmeans_time.R $n $p $SNR $K $dim $repets  
+Rscript source/R/sim_kmeans_time.R $n $p $SNR $K $dim $repets $name
 fi

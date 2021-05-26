@@ -1,18 +1,18 @@
 #!/bin/bash
 name="$1"
 
-rm -f tmpM
-rm -f segmentation*
-rm -f timeR*
-rm -f timeM*
-rm -f data/X_*.csv
+rm -f $name/tmpM
+rm -f $name/segmentation*
+rm -f $name/timeR*
+rm -f $name/timeM*
+rm -rf data/$name
 mkdir -p summaries/$name/results 
 mkdir -p summaries/$name/ouputs
-mv  output_* summaries/$name/ouputs
-mv  bic_* summaries/$name/ouputs
-mv  iterations_* summaries/$name/ouputs
+mv  $name/output_* summaries/$name/ouputs
+mv  $name/bic_* summaries/$name/ouputs
+mv  $name/iterations_* summaries/$name/ouputs
 
-mv  ARI* summaries/$name/results
-mv  BIC* summaries/$name/results
-mv  Time* summaries/$name/results
-mv  Iterations* summaries/$name/results
+mv  $name/ARI* summaries/$name/results
+mv  $name/BIC* summaries/$name/results
+mv  $name/Time* summaries/$name/results
+mv  $name/Iterations* summaries/$name/results
